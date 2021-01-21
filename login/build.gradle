@@ -7,11 +7,11 @@ android {
     buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        applicationId "com.nan.wechat"
+        applicationId "com.nan.wechat.login"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
-        versionCode build_versions.app_version_code
-        versionName build_versions.app_version_name
+        versionCode build_versions.login_version_code
+        versionName build_versions.login_version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

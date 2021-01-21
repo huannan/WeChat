@@ -1,2 +1,4 @@
+include ':moments'
+include ':login'
 include ':app'
 rootProject.name = "WeChat"
