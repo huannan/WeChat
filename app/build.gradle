@@ -26,6 +26,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    if (!build_configs.is_run_alone) {
+        implementation project(path: ':login')
+        implementation project(path: ':moments')
+    }
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$build_versions.kotlin")
     implementation("androidx.core:core-ktx:$versions.androidx_core_ktx")
     implementation("androidx.appcompat:appcompat:$versions.androidx_appcompat")

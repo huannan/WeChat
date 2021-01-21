@@ -25,6 +25,10 @@ build_versions.moments_version_name = "1.0.0"
 build_versions.moments_version_code = 1000000
 ext.build_versions = build_versions
 
+def build_configs = [:]
+build_configs.is_run_alone = isRunAlone()
+ext.build_configs = build_configs
+
 def addRepos(RepositoryHandler handler) {
     handler.maven { url 'https://maven.aliyun.com/repository/public/' }
     handler.flatDir { dir new File(rootProject.rootDir, 'third_libs') }
@@ -33,3 +37,21 @@ def addRepos(RepositoryHandler handler) {
 }
 
 ext.addRepos = this.&addRepos
+
+/**
+ * 修改本地文件local.properties中的APP_LOCAL_DEBUG以控制是否为LocalDebug
+ * 参考配置如下：
+ * sdk.dir=/home/meizu/Android/Sdk
+ * ndk.dir=/home/meizu/Android/Sdk/ndk/android-ndk-r16
+ * IS_RUN_ALONE=false
+ */
+def isRunAlone() {
+    def isLocalDebug = false
+    def file = rootProject.file('local.properties')
+    if (file.exists() && file.isFile()) {
+        Properties properties = new Properties()
+        properties.load(file.newDataInputStream())
+        isLocalDebug = Boolean.parseBoolean(properties.getProperty('IS_RUN_ALONE', 'false'))
+    }
+    return isLocalDebug
+}
