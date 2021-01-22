@@ -39,19 +39,19 @@ def addRepos(RepositoryHandler handler) {
 ext.addRepos = this.&addRepos
 
 /**
- * 修改本地文件local.properties中的APP_LOCAL_DEBUG以控制是否为LocalDebug
+ * 修改本地文件local.properties中的IS_RUN_ALONE以控制是否为开发模式或集成模式
  * 参考配置如下：
  * sdk.dir=/home/meizu/Android/Sdk
  * ndk.dir=/home/meizu/Android/Sdk/ndk/android-ndk-r16
  * IS_RUN_ALONE=false
  */
 def isRunAlone() {
-    def isLocalDebug = false
+    def isRunAlone = false
     def file = rootProject.file('local.properties')
     if (file.exists() && file.isFile()) {
         Properties properties = new Properties()
         properties.load(file.newDataInputStream())
-        isLocalDebug = Boolean.parseBoolean(properties.getProperty('IS_RUN_ALONE', 'false'))
+        isRunAlone = Boolean.parseBoolean(properties.getProperty('IS_RUN_ALONE', 'false'))
     }
-    return isLocalDebug
+    return isRunAlone
 }
