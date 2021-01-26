@@ -15,6 +15,9 @@
             <option value="$PROJECT_DIR$/basic" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/moments" />
+            <option value="$PROJECT_DIR$/router" />
+            <option value="$PROJECT_DIR$/router-annotation" />
+            <option value="$PROJECT_DIR$/router-annotation-compiler" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

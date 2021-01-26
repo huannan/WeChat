@@ -5,6 +5,7 @@ if (build_configs.is_run_alone) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion build_versions.compile_sdk
@@ -42,6 +43,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    common_dependencies.each {
+        implementation project(it)
+    }
+
+    kapt project(path: ':router-annotation-compiler')
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$build_versions.kotlin")
     implementation("androidx.core:core-ktx:$versions.androidx_core_ktx")
     implementation("androidx.appcompat:appcompat:$versions.androidx_appcompat")

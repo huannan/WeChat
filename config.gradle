@@ -7,6 +7,9 @@ versions.java_junit = "4.12"
 versions.androidx_espresso_core = "3.3.0"
 ext.versions = versions
 
+def common_dependencies = [":basic", ":router", ":router-annotation"]
+ext.common_dependencies = common_dependencies
+
 def build_versions = [:]
 build_versions.min_sdk = 21
 build_versions.target_sdk = 30

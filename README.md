@@ -18,6 +18,10 @@
 形式上的区别，组件化的单位是module，插件化的单位是apk
 关注点不同，插件化更关注动态加载、热更新、热修复等“插拔”技术
 
+### 编译时技术
+
+很多地方都出现模板代码,而且要自己维护,这时候可以考虑编译时技术,将模板代码统一通过编译时技术生成,最后直接调用生成的代码.
+
 ### 参考资料
 
 https://juejin.cn/post/6893548444363784205
@@ -25,3 +29,7 @@ https://www.jianshu.com/p/35bc4f456759
 https://www.jianshu.com/p/f5212cf7df55
 https://github.com/syg13579/assembleDemo
 https://github.com/1170762202/WanAndroid
+
+### TODO
+
+开发模式下,组件间由于没有相互依赖,无法跳转

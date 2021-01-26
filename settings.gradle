@@ -1,3 +1,6 @@
+include ':router-annotation-compiler'
+include ':router-annotation'
+include ':router'
 include ':basic'
 include ':moments'
 include ':login'
