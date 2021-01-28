@@ -30,6 +30,11 @@ https://www.jianshu.com/p/f5212cf7df55
 https://github.com/syg13579/assembleDemo
 https://github.com/1170762202/WanAndroid
 
+系列文章
+“终于懂了” 系列：Android组件化，全面掌握！ https://juejin.cn/post/6881116198889586701
+Android 组件化最佳实践 https://juejin.cn/post/6844903649102004231#heading-14
+Android组件化开发实践 https://www.jianshu.com/p/d0f5cf304fa4
+
 ### TODO
 
 开发模式下,组件间由于没有相互依赖,无法跳转
